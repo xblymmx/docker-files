@@ -9,7 +9,6 @@ services:
     networks:
       - default
     environment:
-      - TZ=Asia/Shanghai
       - MYSQL_ROOT_PASSWORD=${mysql_root_password}
       - MYSQL_USER=gitea
       - MYSQL_DATABASE=gitea
@@ -19,7 +18,6 @@ services:
     image: gitea/gitea:latest
     container_name: bundle_gitea
     environment:
-      - TZ=Asia/Shanghai
       - DB_TYPE=mysql
       - DB_HOST=mysql:3306
       - DB_NAME=gitea
@@ -50,7 +48,6 @@ services:
       - drone_data:/var/lib/drone
     restart: always
     environment:
-      # - DRONE_GITEA_SERVER=gitea:3000
       - DRONE_GITEA_SERVER=http://${gitea_host}
       - DRONE_GITEA_CLIENT_ID=${client_id}
       - DRONE_GITEA_CLIENT_SECRET=${client_secret}
