@@ -1,8 +1,9 @@
-## Intro
+# Intro
 
 Runs ss and privoxy to bypass GFW.
 
 
+## Usage
 Edit example.json for proper configurations
 
 ```sh
