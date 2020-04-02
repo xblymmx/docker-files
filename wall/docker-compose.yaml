@@ -6,7 +6,6 @@ services:
     restart: always
     ports:
       - 8118:8118
-    # network_mode: host
     volumes:
       - privoxy-data:/etc/privoxy
   
@@ -14,7 +13,6 @@ services:
     image: shadowsocks/shadowsocks-libev
     container_name: ss
     restart: always
-    # network_mode: host
     volumes:
       - $PWD:/conf
     command: ss-local -c conf/example.json
